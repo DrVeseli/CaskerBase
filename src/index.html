@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Submission</title>
+    <link rel="stylesheet" href="output.css">
 </head>
 <body>
 
-<!-- Form for accepting the name, email, and icon -->
-<form id="dataForm">
-    <label>
-        Name:
-        <input type="text" id="nameInput" required>
-    </label><br>
-    
-    <label>
-        Email:
-        <input type="email" id="emailInput" required>
-    </label><br>
-
-    <label>
-        Icon:
-        <input type="file" id="fileInput" required>
-    </label><br>
-
-    <button type="submit">Submit</button>
+    <div class="hero min-h-screen bg-base-200">
+      
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Create app now!</h1>
+            <p class="py-6">The icon must be a .png and idealy a 1x1</p>
+          </div>
+          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form id="dataForm" class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input type="email" id="emailInput" placeholder="email" class="input input-bordered" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Name</span>
+                </label>
+                <input type="text" id="nameInput" placeholder="app name" class="input input-bordered" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Icon</span>
+                </label>
+                <input type="file" id="fileInput" class="file-input file-input-bordered w-full max-w-xs" required/>              </div>
+              <div class="form-control mt-6">
+                <button class="btn btn-primary">Create</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 </form>
 <script type="module" src="./scripts/form.js"></script>
 

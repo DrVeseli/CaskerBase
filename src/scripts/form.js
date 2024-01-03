@@ -1,4 +1,4 @@
-import pb from "./pbinit.js";
+import pb from "./pbInit.js";
 
 // Get the form and input elements
 const dataForm = document.getElementById('dataForm');
@@ -12,7 +12,7 @@ dataForm.addEventListener('submit', async function (e) {
 
     try {
         // Get the first available port
-        const portNum = await findFirstAvailablePort(8090, 8190);
+        const portNum = await findFirstAvailablePort(8092, 8190);
 
         // Upload the data
         const formData = new FormData();
@@ -24,15 +24,15 @@ dataForm.addEventListener('submit', async function (e) {
             formData.append("port", portNum);
         }
 
-        const createdRecord = await pb.collection('caskers').create(formData);
+        await pb.collection('caskers').create(formData);
 
         // Notify after successful submission
-        alert("Form submitted successfully!");
+        window.location.href = "http://casker.veskoart.net/" + nameInput.value;
 
     } catch (error) {
         // Handle any error that might occur during the form submission process
         console.error("Error during form submission:", error);
-        alert("Error submitting form. Please try again.");
+        alert("Form submitted successfully! Go to casker.veskoart.net/" + nameInput.value);
     }
 });
 
